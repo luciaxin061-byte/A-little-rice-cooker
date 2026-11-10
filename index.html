@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive rice cooker model with three cooking modes and automatic Keep Warm.">
+  <title>Rice Cooker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">EVERYDAY OBJECTS / COMPUTATIONAL MODELS</p>
+      <h1>A little rice cooker.<br><span>Three ways to cook.</span></h1>
+      <p class="intro">An interactive model inspired by my everyday SUPOR rice cooker.</p>
+    </header>
+
+    <div class="workspace">
+      <section class="guide" aria-labelledby="guide-title">
+        <p class="eyebrow">01 / CHOOSE · 02 / START · 03 / KEEP WARM</p>
+        <h2 id="guide-title">From a button press<br>to a change of state.</h2>
+        <p>The cooker is already plugged in. Press <strong>Function</strong> to cycle through three modes, then press <strong>Start</strong>.</p>
+        <ol class="mode-guide">
+          <li><span class="number">01</span><div><strong>Rice Cooking</strong><p>Cook a pot of regular rice.</p></div></li>
+          <li><span class="number">02</span><div><strong>Congee</strong><p>Make rice porridge.</p></div></li>
+          <li><span class="number">03</span><div><strong>Claypot-Style Rice</strong><p>A claypot-style rice cooking mode.</p></div></li>
+        </ol>
+        <p class="demo-note"><strong>A quick simulation.</strong> Modes run for 10, 12, or 15 demo seconds, then automatically switch to Keep Warm. These are not real cooking times.</p>
+      </section>
+
+      <section class="cooker-area" aria-label="Rice cooker controls">
+        <div class="cooker" data-state="idle">
+          <div class="panel">
+            <div class="vent" aria-hidden="true"><i></i><i></i><i></i></div>
+            <p class="panel-name">RICE COOKER</p>
+            <div class="display" role="status" aria-live="polite" aria-atomic="true">
+              <p id="state-label">Standby</p>
+              <p id="selected-label">Choose a mode</p>
+              <p id="time" role="timer" aria-label="Remaining demo cooking time" aria-live="off" hidden></p>
+            </div>
+            <div class="mode-lights" aria-label="Cooking modes">
+              <div class="mode-light"><span class="dot" aria-hidden="true"></span><strong>Rice</strong></div>
+              <div class="mode-light"><span class="dot" aria-hidden="true"></span><strong>Congee</strong></div>
+              <div class="mode-light"><span class="dot" aria-hidden="true"></span><strong>Claypot-style</strong></div>
+            </div>
+            <div class="buttons">
+              <button id="function-button" type="button">Function</button>
+              <button id="start-button" type="button">Start</button>
+            </div>
+          </div>
+          <p class="body-mark" aria-hidden="true">A SMALL KITCHEN STUDY</p>
+        </div>
+        <p id="message" class="message" role="status">Press Function to choose a mode.</p>
+      </section>
+    </div>
+    <footer><span>THREE MODES. ONE SIMPLE LOOP.</span><span>Standby → Cooking → Keep Warm</span></footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,50 @@
+:root { color-scheme: light; --paper: #f5f2eb; --ink: #30352d; --muted: #697163; --green: #546d46; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+main { max-width: 1160px; margin: auto; padding: 48px 40px 24px; }
+.eyebrow { font-size: 10px; letter-spacing: 2px; font-weight: 700; color: var(--muted); }
+h1 { margin: 20px 0 16px; font-family: Georgia, serif; font-size: clamp(38px, 5vw, 62px); line-height: 1.08; font-weight: 400; letter-spacing: -2px; }
+h1 span { color: var(--green); }
+.intro { color: var(--muted); font-size: 14px; line-height: 1.8; }
+.workspace { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin: 40px 0; border-top: 1px solid #d7d9ce; padding-top: 32px; }
+h2 { font: 400 30px/1.2 Georgia, serif; margin: 18px 0; }
+.guide > p:not(.eyebrow) { font-size: 14px; line-height: 1.8; color: var(--muted); }
+.mode-guide { list-style: none; padding: 0; margin: 25px 0; }
+.mode-guide li { display: flex; align-items: start; gap: 15px; padding: 13px 0; border-bottom: 1px solid #dedfd5; }
+.number { color: var(--green); font: 15px Georgia, serif; padding-top: 2px; }
+.mode-guide strong { font-size: 14px; font-weight: 600; }
+.mode-guide strong span { font-weight: 400; }
+.mode-guide p { margin: 6px 0 0; font-size: 12px; color: var(--muted); }
+.demo-note { border-left: 2px solid #90a17e; padding-left: 14px; }
+.cooker-area { text-align: center; min-width: 0; }
+.cooker { max-width: 390px; margin: auto; background: #eae4da; border: 1px solid #d3ccbf; border-radius: 44% 44% 25% 25% / 20% 20% 16% 16%; padding: 24px 21px 14px; box-shadow: 0 18px 25px -22px #5e584b; }
+.panel { background: #252b27; color: #e9ede4; border-radius: 45% 45% 28% 28% / 15% 15% 15% 15%; padding: 24px 23px 27px; }
+.vent { display: flex; justify-content: center; gap: 5px; margin-bottom: 22px; }
+.vent i { width: 24px; height: 5px; background: #c9c8ba; border-radius: 5px; }
+.panel-name { font-size: 12px; margin-bottom: 20px; letter-spacing: 2px; }
+.panel-name span { font-size: 8px; color: #b4bbad; }
+.display { background: #171e19; padding: 15px 8px; border-radius: 10px; min-height: 150px; }
+#state-label { color: #b9caa9; font-size: 11px; letter-spacing: 1px; margin: 0 0 12px; }
+#selected-label { margin: 0; font-size: 18px; font-weight: 500; line-height: 1.5; }
+#selected-label span { font-size: 12px; color: #c2c9bd; }
+#time { margin: 10px 0 0; font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums; color: #d3dfc7; }
+.mode-lights { display: flex; justify-content: space-between; gap: 3px; margin: 20px 0 22px; }
+.mode-light { display: flex; flex: 1; flex-direction: column; align-items: center; gap: 5px; color: #b4bbad; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: #626b60; margin-bottom: 3px; }
+.mode-light strong { font-size: 13px; font-weight: 500; }
+.mode-light small { font-size: 9px; }
+.mode-light.active { color: #e2eacb; }
+.active .dot { background: #d2de9b; box-shadow: 0 0 8px #d2de9b66; }
+.buttons { display: flex; justify-content: center; gap: 20px; }
+button { width: 91px; min-height: 62px; background: transparent; color: #edf1e5; border: 1px solid #89917f; border-radius: 30px; font: inherit; font-size: 18px; cursor: pointer; }
+button span { display: block; font-size: 10px; margin-top: 2px; }
+#start-button { background: #d8dfb2; color: #293023; border-color: #d8dfb2; }
+button:hover:not(:disabled) { transform: translateY(-2px); }
+button:focus-visible { outline: 3px solid #f2b56c; outline-offset: 5px; }
+button:disabled { opacity: .4; cursor: wait; }
+.body-mark { font-size: 8px; letter-spacing: 3px; color: #7c7a6d; margin: 17px 0 3px; }
+.message { font-size: 12px; color: var(--muted); line-height: 1.7; min-height: 44px; margin: 22px auto 0; max-width: 360px; }
+[data-state="cooking"] #state-label { color: #f4c084; }
+[data-state="keepingWarm"] #state-label { color: #e8d37a; }
+footer { border-top: 1px solid #d7d9ce; padding-top: 18px; display: flex; justify-content: space-between; gap: 12px; font-size: 10px; letter-spacing: 1px; color: var(--muted); }
+@media (max-width: 760px) { main { padding: 30px 22px 22px; } .workspace { grid-template-columns: 1fr; gap: 28px; margin-top: 28px; } h1 { letter-spacing: -1px; } .guide { max-width: 480px; } footer { flex-direction: column; line-height: 1.8; } }
